@@ -1,0 +1,24 @@
+stages:
+  - build
+  - deploy
+
+build prod:
+  image: node:latest
+  stage: build
+  cache:
+    paths:
+      - node_modules
+  script:
+      - npm install -g @vue/cli@latest
+      - npm install
+      - npm run build
+  artifacts:
+    paths:
+      - dist/
+
+deploy prod:
+  image: node:latest
+  stage: deploy
+  script:
+    - echo "asd"
+
