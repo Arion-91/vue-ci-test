@@ -19,9 +19,6 @@ build prod:
 deploy prod:
   image: node:latest
   stage: deploy
-  environment:
-    NODE_ENV: production
-    TEST: 123
   script:
     - echo "asd"
 
